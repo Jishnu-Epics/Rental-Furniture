@@ -24,7 +24,30 @@ refresh(frm) {
         }
 
 	},
+    start_date: function(frm) {
+        calculate_days(frm);
+    },
+    end_date: function(frm) {
+        calculate_days(frm);
+    },
+ 
 });
+function calculate_days(frm) {
+    if (frm.doc.start_date && frm.doc.end_date) {
+        let start = frappe.datetime.str_to_obj(frm.doc.start_date);
+        let end = frappe.datetime.str_to_obj(frm.doc.end_date);
+
+        let diff = frappe.datetime.get_day_diff(end, start) + 1;
+
+        if (diff < 0) {
+            frappe.msgprint("End Date must be after Start Date");
+            frm.set_value("total_rent_days", 0);
+            return;
+        }
+
+        frm.set_value("total_rent_days", diff);
+    }
+}
 
 frappe.ui.form.on("Rental Items", {
     qty: function(frm, cdt, cdn) {
