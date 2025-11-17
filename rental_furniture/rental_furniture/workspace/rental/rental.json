@@ -5,7 +5,7 @@
    "label": "Customer"
   }
  ],
- "content": "[{\"id\":\"asDOwbjbiz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Rental</span>\",\"col\":12}},{\"id\":\"VaKzQhTPmU\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Customer\",\"col\":12}},{\"id\":\"KKwSTO1SQA\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}}]",
+ "content": "[{\"id\":\"asDOwbjbiz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Rental</span>\",\"col\":12}},{\"id\":\"VaKzQhTPmU\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Customer\",\"col\":12}},{\"id\":\"KKwSTO1SQA\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"Nm9C77KiRP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rental Details\",\"col\":3}}]",
  "creation": "2025-11-17 20:48:59.633824",
  "custom_blocks": [],
  "docstatus": 0,
@@ -68,7 +68,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-11-17 20:55:20.994336",
+ "modified": "2025-11-17 21:04:30.613042",
  "modified_by": "Administrator",
  "module": "Rental Furniture",
  "name": "Rental",
@@ -79,6 +79,15 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 6.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Rental Details",
+   "link_to": "Rental Details",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
  "title": "Rental"
 }

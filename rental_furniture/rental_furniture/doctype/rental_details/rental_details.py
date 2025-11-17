@@ -3,6 +3,7 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe import _
 
 
 class RentalDetails(Document):
@@ -10,23 +11,22 @@ class RentalDetails(Document):
 
 
 @frappe.whitelist()
-def make_sales_invoice(name):
+def make_dn(name):
     rental = frappe.get_doc("Rental Details", name)
 
-    si = frappe.get_doc({
-        "doctype": "Sales Invoice",
+    dn = frappe.get_doc({
+        "doctype": "Delivery Note",
         "customer": rental.customer,
+        "custom_rental_details": rental.name
     })
     for item in rental.rental_items:
-        si_item = si.append("items", {})
-        si_item.item_code = item.item_code
-        si_item.item_name = item.item
-        si_item.qty = item.qty
-        si_item.rate = item.rental_rate
+        dn_item = dn.append("items", {})
+        dn_item.item_code = item.item_code
+        dn_item.item_name = item.item
+        dn_item.qty = item.qty
+        dn_item.rate = item.rate
        
-    si.insert(ignore_permissions=True)
-    si.submit()
+    dn.insert(ignore_permissions=True)
 
-    frappe.msgprint(f"Sales Invoice {si.name} created successfully")
+    return dn.name
 
-    return si.name

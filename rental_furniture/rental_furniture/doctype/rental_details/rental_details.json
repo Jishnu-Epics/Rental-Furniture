@@ -8,6 +8,7 @@
  "field_order": [
   "section_break_sads",
   "customer",
+  "quotation",
   "amended_from",
   "column_break_psmz",
   "start_date",
@@ -85,23 +86,33 @@
   {
    "fieldname": "total_qty",
    "fieldtype": "Float",
-   "label": "Total Qty"
+   "label": "Total Qty",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_cvim",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "read_only": 1
   },
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "quotation",
+   "fieldtype": "Link",
+   "label": "Quotation",
+   "options": "Quotation",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-17 20:33:16.208850",
+ "modified": "2025-11-17 23:21:22.910716",
  "modified_by": "Administrator",
  "module": "Rental Furniture",
  "name": "Rental Details",

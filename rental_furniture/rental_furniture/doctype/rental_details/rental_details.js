@@ -4,19 +4,19 @@
 frappe.ui.form.on("Rental Details", {
 refresh(frm) {
         if (frm.doc.docstatus == 1) {
-            frm.add_custom_button(__('Sales Invoice'), function() {
+            frm.add_custom_button(__('Delivery Note'), function() {
                 frappe.call({
-                    method: "rental_furniture.rental_furniture.doctype.rental_details.rental_details.make_sales_invoice",
+                    method: "rental_furniture.rental_furniture.doctype.rental_details.rental_details.make_dn",
                     args: {
                         name: frm.doc.name
                     },
                     callback: function(r) {
                         if (r.message) {
                             frappe.show_alert({
-                                message: "sales Invoice is Created",
+                                message: "Delivery Note is Created",
                                 indicator: 'green'
                             }, 5);
-                            frappe.set_route('Form', 'Sales Invoice', r.message);
+                            frappe.set_route('Form', 'Delivery Note', r.message);
                         }
                     }
                 });
@@ -25,3 +25,30 @@ refresh(frm) {
 
 	},
 });
+
+frappe.ui.form.on("Rental Items", {
+    qty: function(frm, cdt, cdn) {
+        calculate_total(frm)
+    },
+    rate: function(frm, cdt, cdn) {
+        calculate_total(frm)
+    },
+    rental_items_remove: function(frm, cdt, cdn) {
+        calculate_total(frm)
+    }
+});
+
+function calculate_total(frm) {
+    let total = 0;
+    let qty = 0;
+   
+    frm.doc.rental_items.forEach(row => {
+        row.amount = (row.qty || 0) * (row.rate || 0);
+        total += row.amount;
+        qty += row.qty || 0; 
+    });
+
+    frm.set_value("total_amount", total);
+    frm.set_value("total_qty", qty);
+    frm.refresh_fields();
+}
