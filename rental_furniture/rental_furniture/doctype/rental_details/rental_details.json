@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:RD-{customer}-{####}",
  "creation": "2025-11-12 22:51:01.346918",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -13,7 +14,11 @@
   "end_date",
   "total_rent_days",
   "section_break_fgmr",
-  "rental_items"
+  "rental_items",
+  "section_break_svxy",
+  "total_qty",
+  "column_break_cvim",
+  "total_amount"
  ],
  "fields": [
   {
@@ -71,16 +76,36 @@
    "fieldtype": "Table",
    "label": "Rental Items",
    "options": "Rental Items"
+  },
+  {
+   "fieldname": "section_break_svxy",
+   "fieldtype": "Section Break",
+   "hide_border": 1
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty"
+  },
+  {
+   "fieldname": "column_break_cvim",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-12 23:08:42.150281",
+ "modified": "2025-11-17 20:33:16.208850",
  "modified_by": "Administrator",
  "module": "Rental Furniture",
  "name": "Rental Details",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
