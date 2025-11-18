@@ -5,7 +5,7 @@
    "label": "Customer"
   }
  ],
- "content": "[{\"id\":\"asDOwbjbiz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Rental</span>\",\"col\":12}},{\"id\":\"VaKzQhTPmU\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Customer\",\"col\":12}},{\"id\":\"KKwSTO1SQA\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"Nm9C77KiRP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rental Details\",\"col\":3}}]",
+ "content": "[{\"id\":\"asDOwbjbiz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Rental</span>\",\"col\":12}},{\"id\":\"5dyEusZUpq\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Annual Sales\",\"col\":4}},{\"id\":\"zP4qouI1Yd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Annual Purchase\",\"col\":4}},{\"id\":\"tHTIOyUT0_\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Asset Value\",\"col\":4}},{\"id\":\"VaKzQhTPmU\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Customer\",\"col\":12}},{\"id\":\"KKwSTO1SQA\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"Nm9C77KiRP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rental Details\",\"col\":3}},{\"id\":\"rvArwKKX7O\",\"type\":\"card\",\"data\":{\"card_name\":\"Buying\",\"col\":4}},{\"id\":\"Y77E_CzomR\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":4}},{\"id\":\"PELJnEtF87\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
  "creation": "2025-11-17 20:48:59.633824",
  "custom_blocks": [],
  "docstatus": 0,
@@ -66,13 +66,154 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Buying",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Order",
+   "link_count": 0,
+   "link_to": "Purchase Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Receipt",
+   "link_count": 0,
+   "link_to": "Purchase Receipt",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Invoice",
+   "link_count": 0,
+   "link_to": "Purchase Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Selling",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Quotation",
+   "link_count": 0,
+   "link_to": "Quotation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Invoice",
+   "link_count": 0,
+   "link_to": "Sales Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Delivery Note",
+   "link_count": 0,
+   "link_to": "Delivery Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Asset Depreciation Ledger",
+   "link_count": 0,
+   "link_to": "Asset Depreciation Ledger",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Asset Maintenance",
+   "link_count": 0,
+   "link_to": "Asset Maintenance",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "Asset Maintenance",
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "General Ledger",
+   "link_count": 0,
+   "link_to": "General Ledger",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Sales Invoice Trends",
+   "link_count": 0,
+   "link_to": "Sales Invoice Trends",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-11-17 21:04:30.613042",
+ "modified": "2025-11-18 09:45:53.027507",
  "modified_by": "Administrator",
  "module": "Rental Furniture",
  "name": "Rental",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Annual Sales",
+   "number_card_name": "Annual Sales"
+  },
+  {
+   "label": "Annual Purchase",
+   "number_card_name": "Annual Purchase"
+  },
+  {
+   "label": "Asset Value",
+   "number_card_name": "Asset Value"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
