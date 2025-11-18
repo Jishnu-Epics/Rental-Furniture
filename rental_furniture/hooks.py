@@ -242,3 +242,7 @@ doctype_js = {"Quotation" : "public/js/quotation.js"}
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures =[
+    {"dt":"Custom Field","filters":[["module","in",["Rental Furniture"]]]},
+    # {"dt":"Property Setter","filters":[["module","in",["Rental Furniture"]]]}
+]

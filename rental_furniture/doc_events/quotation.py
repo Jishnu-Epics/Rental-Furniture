@@ -11,14 +11,34 @@ def make_rental_details(name):
     d.quotation = quotation.name
 
     for item in quotation.items:
+        amount = (item.qty or 0) * (item.rate or 0)
+
         d.append("rental_items", {
             "item_code": item.item_code,
             "qty": item.qty,
             "rate": item.rate,
+            "amount": amount,     
         })
 
-    d.save()
+    calculate_totals(d)
+
+    d.save(ignore_permissions=True)
+
     return d.name
+
+
+def calculate_totals(doc):
+    total_qty = 0
+    total_amount = 0
+
+    for item in doc.rental_items:
+        item.amount = (item.qty or 0) * (item.rate or 0)
+
+        total_qty += (item.qty or 0)
+        total_amount += item.amount
+
+    doc.total_qty = total_qty
+    doc.total_amount = total_amount
 
 def create_customer_from_lead(lead_name, ignore_permissions=False):
 	from erpnext.crm.doctype.lead.lead import _make_customer
